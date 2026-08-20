@@ -53,7 +53,7 @@ A futuristic, high-performance desktop AI assistant inspired by JARVIS and cyber
 ### 🍏 macOS Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Supernova.git
+   git clone https://github.com/Godbridger9893/Supernova.git
    cd Supernova
 Run the one-click startup script:
 
@@ -79,7 +79,7 @@ Clone the repository:
 powershell
 
 
-git clone https://github.com/YOUR_USERNAME/Supernova.git
+git clone https://github.com/Godbridger9893/Supernova.git
 cd Supernova
 Create virtual environment and install dependencies:
 
@@ -101,7 +101,7 @@ Clone the repository:
 bash
 
 
-git clone https://github.com/YOUR_USERNAME/Supernova.git
+git clone https://github.com/Godbridger9893/Supernova.git
 cd Supernova
 Set up environment & install dependencies:
 
