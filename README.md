@@ -95,6 +95,7 @@ powershell
 
 
 python run.py
+
 🐧 Linux Installation
 Clone the repository:
 
