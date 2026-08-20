@@ -1,0 +1,67 @@
+{
+    "user_name": "User",
+    "preferences": {
+        "preferred_browser": "Google Chrome",
+        "work_directory": "~/Desktop",
+        "city": "Cupertino"
+    },
+    "facts": [],
+    "recent_tasks": [
+        {
+            "title": "hi",
+            "status": "completed"
+        },
+        {
+            "title": "can you please open YouTube",
+            "status": "completed"
+        },
+        {
+            "title": "Analyze what is currently on my screen.",
+            "status": "completed"
+        },
+        {
+            "title": "hi",
+            "status": "completed"
+        },
+        {
+            "title": "what ai model are you",
+            "status": "completed"
+        },
+        {
+            "title": "hello",
+            "status": "completed"
+        },
+        {
+            "title": "hi",
+            "status": "completed"
+        },
+        {
+            "title": "I",
+            "status": "completed"
+        },
+        {
+            "title": "please open YouTube in my",
+            "status": "completed"
+        },
+        {
+            "title": "hi",
+            "status": "completed"
+        },
+        {
+            "title": "please open YouTube",
+            "status": "completed"
+        },
+        {
+            "title": "please open notes",
+            "status": "completed"
+        },
+        {
+            "title": "open youtube",
+            "status": "completed"
+        },
+        {
+            "title": "please open YouTube",
+            "status": "completed"
+        }
+    ]
+}

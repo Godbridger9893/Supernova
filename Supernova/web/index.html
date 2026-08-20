@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUPERNOVA // NOVA INDUSTRIES AI CORE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       NOVA INDUSTRIES CINEMATIC STARTUP SEQUENCE
+       ══════════════════════════════════════════════════ -->
+  <div id="boot-screen">
+    <div class="boot-scan"></div>
+    <div class="boot-grid-overlay"></div>
+    <div class="boot-header-tag">NOVA INDUSTRIES // NEURAL INTERFACE</div>
+    <div class="boot-logo">SUPERNOVA</div>
+    <div class="boot-tagline">NOVA INDUSTRIES // PROTOCOL MK-LXXXV MULTIMODAL CORE</div>
+    <div class="boot-bar-wrap"><div class="boot-bar"></div></div>
+    <div class="boot-status" id="bootStatusText">INITIALIZING QUANTUM ENCRYPTION MATRIX<span>_</span></div>
+    <div class="boot-telemetry">SYS.INTEGRITY: 100% | CORE FREQ: 4.80 GHz | NEURAL NODES: 64,000</div>
+  </div>
+
+  <!-- Ambient Holographic FX -->
+  <div class="hud-grid-background"></div>
+  <div class="hud-scanline"></div>
+
+  <!-- ══════════════════════════════════════════════════
+       MAIN STARK INDUSTRIES HUD
+       ══════════════════════════════════════════════════ -->
+  <div class="hud-container">
+
+    <!-- TOP DIAGNOSTIC HEADER BAR -->
+    <header class="hud-header">
+      <div class="hud-brand">
+        <div class="hud-logo-icon">
+          <span class="logo-core"></span>
+          <span class="logo-ring"></span>
+          <span class="logo-ring-outer"></span>
+        </div>
+        <div class="hud-title-group">
+          <h1 class="hud-title">SUPER<span class="accent-text">NOVA</span></h1>
+          <span class="hud-subtitle">NOVA AI MATRIX // PROTOCOL MK-85</span>
+        </div>
+      </div>
+
+      <!-- Center Status Badge & Live Telemetry -->
+      <div class="hud-center-telemetry">
+        <div class="hud-status-badge" id="aiStatusBadge">
+          <span class="status-indicator-dot" id="statusDot"></span>
+          <span class="status-indicator-text" id="statusText">JARVIS CORE ONLINE</span>
+        </div>
+        <div class="hud-diag-info">
+          <span id="hudCoords">LAT: 40.7128° N | LNG: 74.0060° W</span>
+          <span class="hud-sep">•</span>
+          <span id="hudTime">00:00:00 UTC</span>
+        </div>
+      </div>
+
+      <!-- Header Action Controls -->
+      <div class="hud-header-actions">
+        <button class="hud-btn hud-btn-icon" id="sfxToggleBtn" title="Toggle Stark Sound FX">
+          <span id="sfxIcon">🔊</span>
+          <span id="sfxText">SFX ON</span>
+        </button>
+
+        <button class="hud-btn hud-btn-icon" id="quickScreenBtn" title="Analyze macOS Screen Vision">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span>VISION</span>
+        </button>
+
+        <button class="hud-btn hud-btn-icon" id="quickWeatherBtn" title="Check Atmospheric Telemetry">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          <span>WEATHER</span>
+        </button>
+
+        <button class="hud-btn hud-btn-icon" id="settingsModalBtn" title="System Configuration">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>CONFIG</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN HOLOGRAPHIC VIEWPORT -->
+    <main class="hud-main">
+
+      <!-- LEFT PANEL: Stark System Telemetry & Memory Registers -->
+      <section class="hud-panel hud-left-panel">
+        <div class="panel-header">
+          <span class="panel-tag">SYS // DIAGNOSTICS</span>
+          <span class="panel-pulse-dot"></span>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">CPU CORE MATRIX</span>
+              <span class="metric-val" id="cpuValue">0%</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" id="cpuBar" style="width:0%"></div></div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">NEURAL MEMORY</span>
+              <span class="metric-val" id="ramValue">0%</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" id="ramBar" style="width:0%"></div></div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">QUANTUM DATA I/O</span>
+              <span class="metric-val" id="netValue">0.0 MB/s</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill accent-blue" id="netBar" style="width:15%"></div></div>
+          </div>
+
+          <div class="metric-card" id="batteryCard">
+            <div class="metric-header">
+              <span class="metric-label">ARC REACTOR POWER</span>
+              <span class="metric-val" id="batValue">100%</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill accent-green" id="batBar" style="width:100%"></div></div>
+          </div>
+        </div>
+
+        <!-- Task Plan -->
+        <div class="panel-header" style="margin-top:6px">
+          <span class="panel-tag">JARVIS // ACTION SEQUENCE</span>
+        </div>
+        <div class="task-plan-container" id="taskPlanBox">
+          <div class="task-empty-state">Standby for protocol execution</div>
+        </div>
+
+        <!-- Live Hex Memory Stream -->
+        <div class="panel-header" style="margin-top:6px">
+          <span class="panel-tag">HEX // MEMORY DUMP</span>
+        </div>
+        <div class="hex-dump-box" id="hexDumpBox">
+          <div>0x7FFE_A941 04FF 82A1 [SYNC]</div>
+          <div>0x4001_B882 12C0 99DF [READY]</div>
+          <div>0x1A80_00F4 FF00 33B0 [ACTIVE]</div>
+        </div>
+
+        <!-- Vision Preview -->
+        <div class="vision-preview-card" id="visionPreviewCard" style="display:none">
+          <div class="vision-preview-header">
+            <span>LIVE SCREEN CAPTURE</span>
+            <button class="vision-close-btn" id="closeVisionBtn">&times;</button>
+          </div>
+          <img id="visionPreviewImg" src="" alt="Screen Capture" style="width:100%;border-radius:3px">
+        </div>
+      </section>
+
+      <!-- CENTER: 3D Hologram Area with Stark Reticle Overlays -->
+      <section class="hud-center-viewport">
+        <div id="orb-canvas-container" class="orb-container"></div>
+
+        <!-- Tactical Stark HUD Overlays -->
+        <div class="hud-crosshair-overlay">
+          <div class="ch-corner ch-tl">
+            <span class="ch-label">TARGET: LOCK</span>
+          </div>
+          <div class="ch-corner ch-tr">
+            <span class="ch-label">GRID: 08-X</span>
+          </div>
+          <div class="ch-corner ch-bl">
+            <span class="ch-label">ELEV: +14.2°</span>
+          </div>
+          <div class="ch-corner ch-br">
+            <span class="ch-label">NOVA PROTOCOL</span>
+          </div>
+          <div class="radar-line-h"></div>
+          <div class="radar-line-v"></div>
+          <div class="ch-center-ring"></div>
+          <div class="ch-center-ring-outer"></div>
+        </div>
+
+        <!-- Audio Oscilloscope Waveform Bar -->
+        <div class="waveform-container">
+          <canvas id="waveformCanvas"></canvas>
+          <div class="waveform-label" id="waveformStateLabel">AUDIO MATRIX // ACTIVE</div>
+        </div>
+      </section>
+
+      <!-- RIGHT PANEL: Conversation Feed -->
+      <section class="hud-panel hud-right-panel">
+        <div class="panel-header">
+          <span class="panel-tag">INTELLIGENCE LOGS // STREAM</span>
+          <button class="clear-feed-btn" id="clearFeedBtn" title="Clear feed">CLEAR</button>
+        </div>
+
+        <div class="chat-feed" id="chatFeed">
+          <div class="chat-message assistant-message">
+            <div class="msg-sender">SUPERNOVA // JARVIS CORE</div>
+            <div class="msg-content">Good day, sir. All Nova neural protocols are online. Multimodal vision, voice channels, and macOS automation sequences are primed and awaiting your directive.</div>
+            <div class="msg-timestamp">SYSTEM_READY</div>
+          </div>
+        </div>
+
+        <!-- Quick Prompts -->
+        <div class="quick-prompts-bar">
+          <button class="prompt-chip" data-text="What's on my screen?">🔍 Screen Vision</button>
+          <button class="prompt-chip" data-text="Open Spotify and Visual Studio Code">🚀 Launch Apps</button>
+          <button class="prompt-chip" data-text="Set volume to 80%">🔊 Volume 80%</button>
+          <button class="prompt-chip" data-text="Create a presentation on Artificial Intelligence">📊 Create PPT</button>
+          <button class="prompt-chip" data-text="Create an expense tracker spreadsheet">📈 Excel Sheet</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER: High-Tech Command Bar -->
+    <footer class="hud-footer">
+      <div class="command-bar-wrapper">
+        <button class="voice-mic-btn" id="micBtn" title="Click to Speak to JARVIS">
+          <div class="mic-glow-ring"></div>
+          <svg class="mic-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="22"/>
+          </svg>
+        </button>
+
+        <div class="command-input-group">
+          <span class="input-prefix">&gt;</span>
+          <input type="text" id="commandInput" class="command-input"
+            placeholder="State a command for JARVIS or type your directive..." autocomplete="off">
+          <button class="send-btn" id="sendBtn" title="Transmit Directive">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+
+        <button class="stop-audio-btn" id="stopAudioBtn" title="Silence Audio Output">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="6" y="6" width="12" height="12"/>
+          </svg>
+        </button>
+      </div>
+    </footer>
+
+  </div><!-- /.hud-container -->
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="settingsModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title">NOVA SYSTEM CONFIGURATION</h2>
+        <button class="modal-close-btn" id="closeSettingsBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="providerSelect">AI Brain Provider</label>
+          <select id="providerSelect" class="form-select">
+            <option value="gemini">Google Gemini (Cloud / Vision / Tools)</option>
+            <option value="ollama">Local Ollama (100% Offline / Private)</option>
+          </select>
+        </div>
+
+        <div id="ollamaSettingsGroup" style="display:none;border-left:2px solid var(--sn-gold-border);padding-left:12px;margin-bottom:4px">
+          <div class="form-group">
+            <label for="ollamaUrlInput">Local Ollama URL</label>
+            <input type="text" id="ollamaUrlInput" class="form-input" placeholder="http://127.0.0.1:11434">
+          </div>
+          <div class="form-group" style="margin-top:8px">
+            <label for="ollamaModelSelect">Ollama Model</label>
+            <select id="ollamaModelSelect" class="form-select">
+              <option value="llama3.2">llama3.2 (Default)</option>
+              <option value="mistral">mistral</option>
+              <option value="qwen2.5">qwen2.5</option>
+              <option value="deepseek-r1">deepseek-r1</option>
+              <option value="phi4">phi4</option>
+            </select>
+            <small class="form-hint" id="ollamaStatusText">Checking Ollama connection…</small>
+          </div>
+        </div>
+
+        <div id="geminiSettingsGroup">
+          <div class="form-group">
+            <label for="geminiKeyInput">Gemini API Key (Google AI Studio)</label>
+            <input type="password" id="geminiKeyInput" class="form-input" placeholder="AIzaSy...">
+            <small class="form-hint">Required for multimodal vision & complex tool workflows.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="openrouterKeyInput">OpenRouter API Key (Optional Fallback)</label>
+          <input type="password" id="openrouterKeyInput" class="form-input" placeholder="sk-or-v1-...">
+        </div>
+
+        <div class="form-group">
+          <label for="voiceSelect">macOS Speech Synthesizer Voice</label>
+          <select id="voiceSelect" class="form-select">
+            <option value="Samantha">Samantha (High Quality macOS)</option>
+            <option value="Daniel">Daniel (British JARVIS Tone)</option>
+            <option value="Karen">Karen (Australian macOS)</option>
+            <option value="Alex">Alex (macOS Classic)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="voiceToggle" checked>
+            <span>Enable Voice Speech Feedback</span>
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="hud-btn hud-btn-secondary" id="cancelSettingsBtn">CANCEL</button>
+        <button class="hud-btn hud-btn-primary" id="saveSettingsBtn">SAVE CONFIG</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/soundfx.js"></script>
+  <script src="js/telemetry.js"></script>
+  <script src="js/visualizer.js"></script>
+  <script src="js/orb.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Boot screen: auto-remove after animation + audio trigger -->
+  <script>
+    setTimeout(() => {
+      const boot = document.getElementById('boot-screen');
+      if (boot) boot.remove();
+    }, 4300);
+  </script>
+</body>
+</html>
