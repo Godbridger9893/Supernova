@@ -48,6 +48,7 @@ A futuristic, high-performance desktop AI assistant inspired by JARVIS and cyber
 ### Prerequisites
 - **Python 3.10+** installed
 - *(Optional)* [Ollama](https://ollama.com/) installed if running local offline models
+- !AND MAKE SURE TO ADD YOUR OWN API KEYS!
 ---
 ### 🍏 macOS Installation
 1. **Clone the repository:**
